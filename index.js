@@ -86,9 +86,8 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(array, flavor){
- /*your code here*/
- //use .unshift() to add a flavor to the front of array
- // return the resulting array
+  array.unshift(flavor);
+  return array;
 }
 
 
@@ -104,9 +103,8 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array){
- /*your code here*/
- //remove last item with .pop()
- //return array
+ array.pop();
+ return array;
 }
 
 
@@ -123,9 +121,7 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 function getFlavorByIndex(array, index){
-  /*your code here*/
-  //if i passed in original flavors and 2 i would want to return originalFlavors[2]
-  //return array[index]
+  return array[index];
 }
 
 
@@ -144,12 +140,13 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(array, index){
-  /*your code here*/
-  //loop through array
-  //if  the index matches given flavor exactly ===
-  //if it does, remove it
-  //return array outside loop
+function removeFlavorByName(array, flavor){
+  for (let i = 0; i < array.length; i++){
+    if (array[i] === flavor){
+      array.splice(i, 1);
+    }
+  }
+  return array;
 }
 
 
@@ -175,12 +172,13 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(array, string){
-  /*your code here*/
-  //use .includes() (case sensitive, use capital c in chocolate)
-  //create filteredArray
-  //for loop original array
-  //if item includes string, push it to filteredArray
-  //outside of for loop, return filteredArray
+  const newArray = [];
+  for (let i = 0; i < array.length; i++){
+    if (array[i].includes(string)){
+      newArray.push(array[i])
+    }
+  }
+  return newArray;
 }
 
 
